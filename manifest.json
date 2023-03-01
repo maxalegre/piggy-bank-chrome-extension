@@ -1,0 +1,28 @@
+{
+  "name": "Piggy Bank",
+  "version": "0.0.1",
+  "description": "Flow hackaton",
+  "manifest_version": 3,
+  "author": "Piggy",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Piggy Bank"
+  },
+  "permissions": ["activeTab", "storage", "identity"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"],
+  "oauth2": {
+    "client_id": "123",
+    "scopes": [
+      "profile",
+      "email",
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
